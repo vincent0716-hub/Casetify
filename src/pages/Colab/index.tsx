@@ -1,6 +1,5 @@
-import React from 'react'
-import { Container, Box, Grid, Paper } from '@mui/material';
-import FilterSideList from '../../component/SidList/FilterSideList'
+
+import { Grid } from '@mui/material';
 const index = () => {
     return (
         <>

@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container, Box, Grid, Paper, Typography, Stack } from '@mui/material';
+
+import { Box, Grid, Typography, Stack } from '@mui/material';
 import OfflineBoltOutlinedIcon from '@mui/icons-material/OfflineBoltOutlined';
 import { PhoneList, mockItem } from './defined'
 const index = () => {
@@ -41,7 +41,7 @@ const ProductItem = ({ item }: { item: PhoneList }) => {
             />
             <Stack direction='row'>
                 <OfflineBoltOutlinedIcon sx={{ color: 'red' }} fontSize='small' />
-                {item.hasMagSafe == true && <Typography sx={{ fontWeight: 700, color: 'red' }} variant="body2" gutterBottom>MagSafe兼容</Typography>}
+                {item.hasMagSafe === true && <Typography sx={{ fontWeight: 700, color: 'red' }} variant="body2" gutterBottom>MagSafe兼容</Typography>}
             </Stack>
             <Typography sx={{ fontWeight: 700 }} variant="body2" gutterBottom>{item.title1}</Typography>
             <Typography sx={{

@@ -1,12 +1,11 @@
 import React from 'react'
-import { Container, Typography, Box, Grid, List, ListItem, ListItemText, Divider, Collapse, ListItemButton, FormGroup, FormControlLabel, Checkbox } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Typography, Box, Grid, List, ListItemText, Divider, Collapse, ListItemButton, FormGroup, FormControlLabel, Checkbox } from '@mui/material';
 import { mockFilter, TitleGroup, Color, ColorType } from './defined'
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import { pink, grey } from '@mui/material/colors';
+import { grey } from '@mui/material/colors';
 const FilterSideList = () => {
 
     return (
@@ -112,6 +111,7 @@ const CollapseList = ({ group }: { group: TitleGroup }) => {
                                         },
                                     }} />} label={child.childName} />
                             }
+                            return
 
                         })}
                         <Collapse in={moreOpen} timeout="auto" unmountOnExit>
@@ -125,7 +125,9 @@ const CollapseList = ({ group }: { group: TitleGroup }) => {
                                                     color: 'black',
                                                 },
                                             }} />} label={child.childName} />
+
                                         }
+                                        return
                                     })}
                                 </FormGroup>
                             </List>

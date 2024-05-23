@@ -1,9 +1,8 @@
-import React, { useContext, useState } from 'react'
-import { AppBar, ListItemButton, List, ListItemText, Box, Toolbar, Typography, Button, Divider, IconButton, Badge, Menu, MenuItem, Grid } from '@mui/material';
+import { useState } from 'react'
+import { AppBar, ListItemButton, List, ListItemText, Box, Toolbar, Typography, Divider, IconButton, Badge, Grid } from '@mui/material';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import TokenIcon from '@mui/icons-material/Token';
-import { Link, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import LOGO from '../../images/Casetify_logo.png'
 import { projectRouter } from '../../router/router'
@@ -41,7 +40,7 @@ const AppNav = () => {
                         <Grid container spacing={3} direction="row">
 
                             {projectRouter.map((routerProps, ind) => {
-                                if (routerProps.text == '精選商品&關於品牌') {
+                                if (routerProps.text === '精選商品&關於品牌') {
                                     return <Grid item xs="auto" key={ind}><Typography
                                         textAlign="center"
                                         onMouseEnter={() => { setIsHovered(true); }}
@@ -93,7 +92,7 @@ const AppNav = () => {
                     </Box>
                 </Toolbar>
                 {
-                    isHovered == true
+                    isHovered === true
                     && <ExpandedNav setIsHovered={setIsHovered} />
                 }
             </AppBar>
@@ -139,7 +138,7 @@ const ExpandedNav = ({ setIsHovered }: { setIsHovered: (v: any) => void }) => {
             </Grid>
             <Grid item xs={10}>
                 {
-                    hoveredText == "recommnad" && <>
+                    hoveredText === "recommnad" && <>
                         {/* <Divider orientation="vertical" variant="middle" flexItem /> */}
                         <Typography variant="h6">精選系列</Typography>
                         <Grid container spacing={6} sx={{ py: 4 }}>
@@ -148,6 +147,7 @@ const ExpandedNav = ({ setIsHovered }: { setIsHovered: (v: any) => void }) => {
                                     <Grid item xs={3} key={ind}>
                                         <Link to={v.path} style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => { setIsHovered(false); }}>
                                             <img
+                                                alt='image'
                                                 src={v.src}
                                                 style={{ height: '296px' }}
                                             />
@@ -161,7 +161,7 @@ const ExpandedNav = ({ setIsHovered }: { setIsHovered: (v: any) => void }) => {
                     </>
                 }
                 {
-                    hoveredText == "new" && <>
+                    hoveredText === "new" && <>
                         <Typography variant="h6">全新商品</Typography>
                         <Grid container spacing={6} sx={{ py: 4 }}>
                             {
@@ -169,6 +169,7 @@ const ExpandedNav = ({ setIsHovered }: { setIsHovered: (v: any) => void }) => {
                                     <Grid item xs={3} key={ind}>
                                         <Link to={v.path} style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => { setIsHovered(false); }}>
                                             <img
+                                                alt='imageNew'
                                                 src={v.src}
                                                 style={{ height: '296px' }}
                                             />

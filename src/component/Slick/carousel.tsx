@@ -1,11 +1,7 @@
-import React, { useEffect } from 'react';
-import SwiperCore from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import { Box, Typography } from '@mui/material';
 import { Autoplay, Navigation } from 'swiper/modules';
-// Initialize Swiper core modules
-// SwiperCore.use([Autoplay]);
 import { grey } from '@mui/material/colors';
 const SimpleCarousel = () => {
 
