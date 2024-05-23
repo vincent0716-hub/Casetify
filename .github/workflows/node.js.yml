@@ -29,11 +29,11 @@ jobs:
     - name: Install dependencies
     - run: npm install
     - name: Run tests
-        run: npm test
+    - run: npm test
         env:
           CI: true
     - name: Configure Jest
-        run: |
+    - run: |
           echo "module.exports = {
             moduleNameMapper: {
               '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
