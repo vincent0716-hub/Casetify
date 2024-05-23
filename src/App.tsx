@@ -6,9 +6,6 @@ import { Container, Box, Grid } from '@mui/material';
 import AppNav from '../src/component/Nav/AppNav'
 import FilterSideList from './component/SidList/FilterSideList'
 import { Link, Routes, Route, BrowserRouter } from 'react-router-dom';
-import Home from './pages/Home'
-import Product from './pages/Product'
-import About from './pages/About'
 import SimpleCarousel from './component/Slick/carousel'
 import { projectRouter, Router } from './router/router'
 import { HomeContext } from './context/HomePageContext'
