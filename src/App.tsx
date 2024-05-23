@@ -1,25 +1,49 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
+import { AllProviders } from './context/AllProviders'
+import { Container, Box, Grid } from '@mui/material';
+import AppNav from '../src/component/Nav/AppNav'
+import FilterSideList from './component/SidList/FilterSideList'
+import { Link, Routes, Route, BrowserRouter } from 'react-router-dom';
+import Home from './pages/Home'
+import Product from './pages/Product'
+import About from './pages/About'
+import SimpleCarousel from './component/Slick/carousel'
+import { projectRouter, Router } from './router/router'
+import { HomeContext } from './context/HomePageContext'
+function App(): JSX.Element {
+  const { homeClick, } = useContext(HomeContext)
+  console.log(homeClick)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <AllProviders>
+        <SimpleCarousel />
+        <AppNav />
+        <Container maxWidth="xl" >
+          <Grid container sx={{ p: 8 }}>
+
+            {projectRouter.map((page: Router, index) => (
+              <>
+                <Routes>
+                  <Route
+                    key={index}
+                    path={page.path}
+                    element={
+                      <>
+                        {page.path != "/" && <FilterSideList />}
+                        {page.element}
+                      </>
+                    }
+                  />
+                </Routes>
+              </>
+            ))}
+
+          </Grid>
+        </Container>
+      </AllProviders>
+    </BrowserRouter >
   );
 }
 
