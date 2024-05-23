@@ -147,7 +147,7 @@ const ExpandedNav = ({ setIsHovered }: { setIsHovered: (v: any) => void }) => {
                                     <Grid item xs={3} key={ind}>
                                         <Link to={v.path} style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => { setIsHovered(false); }}>
                                             <img
-                                                alt='image'
+                                                alt='imageRecommand'
                                                 src={v.src}
                                                 style={{ height: '296px' }}
                                             />

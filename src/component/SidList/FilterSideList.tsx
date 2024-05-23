@@ -111,7 +111,7 @@ const CollapseList = ({ group }: { group: TitleGroup }) => {
                                         },
                                     }} />} label={child.childName} />
                             }
-                            return
+                            return <></>
 
                         })}
                         <Collapse in={moreOpen} timeout="auto" unmountOnExit>
@@ -127,7 +127,7 @@ const CollapseList = ({ group }: { group: TitleGroup }) => {
                                             }} />} label={child.childName} />
 
                                         }
-                                        return
+                                        return <></>
                                     })}
                                 </FormGroup>
                             </List>
