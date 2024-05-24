@@ -7,7 +7,8 @@ const SimpleCarousel = () => {
 
 
     return (
-        <Box sx={{ bgcolor: grey[50], width: '100%', height: '50px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <Box data-testid="simple-carousel"
+            sx={{ bgcolor: grey[50], width: '100%', height: '50px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {/* <Swiper
                 className="swiper-container"
                 spaceBetween={30}

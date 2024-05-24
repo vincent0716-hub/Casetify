@@ -10,7 +10,7 @@ import { newPageList, recommondedPageList } from './defined'
 const AppNav = () => {
     const [isHovered, setIsHovered] = useState(false);
     return (
-        <Box sx={{
+        <Box data-testid="app-nav" sx={{
             flexGrow: 1,
         }}>
             <AppBar position="static" style={{ backgroundColor: 'white', color: 'black' }}>

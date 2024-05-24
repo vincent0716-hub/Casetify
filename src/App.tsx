@@ -20,20 +20,19 @@ function App(): JSX.Element {
           <Grid container sx={{ p: 8 }}>
 
             {projectRouter.map((page: Router, index) => (
-              <>
-                <Routes>
-                  <Route
-                    key={index}
-                    path={page.path}
-                    element={
-                      <>
-                        {page.path !== "/" && <FilterSideList />}
-                        {page.element}
-                      </>
-                    }
-                  />
-                </Routes>
-              </>
+
+              <Routes key={index}>
+                <Route
+                  key={index}
+                  path={page.path}
+                  element={
+                    <>
+                      {page.path !== "/" && <FilterSideList data-testid="filter-side-list" />}
+                      {page.element}
+                    </>
+                  }
+                />
+              </Routes>
             ))}
 
           </Grid>
